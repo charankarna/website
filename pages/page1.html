@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Media Guide</title>
+    <link rel="stylesheet" href="../styles/style1.css">
+</head>
+<body>
+    <!-- Background Video -->
+    <video autoplay muted loop id="bgVideo">
+        <source src="../assets/videos/video1.mp4" type="video/mp4">
+        Your browser does not support HTML5 video.
+    </video>
+    
+    <div class="container">
+        <h1>Digital Media Explorer</h1>
+        <p class="content">
+            Explore various digital media formats: 
+            <a href="../image.html" class="preview-link" data-type="image">Images</a>,
+            <a href="../video.html" class="preview-link" data-type="video">Videos</a>,
+            <a href="../gif.html" class="preview-link" data-type="gif">Animations</a>, and
+            <a href="../pdf.html" class="preview-link" data-type="pdf">Documents</a>.
+            Hover over any link to preview the content type.
+        </p>
+        <div class="preview-card" id="previewCard">
+            
+        </div>
+    </div>
+    <script src="../scripts/script1.js"></script>
+</body>
+</html>

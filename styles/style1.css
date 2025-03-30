@@ -1,0 +1,486 @@
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    color: #ffffff;
+    margin: 0;
+    padding: 2rem;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Background Video Styles */
+#bgVideo {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: 1;
+    filter: brightness(0.6);
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(15, 12, 41, 0.9), rgba(48, 43, 99, 0.8));
+    z-index: -16;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 3;
+}
+
+/* Keep all other existing CSS rules below */
+/* ... (rest of your existing CSS remains the same) ... */
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #00ff88;
+    text-align: center;
+}
+
+/* Preview Links */
+.preview-link {
+    color: #00ff88;
+    text-decoration: none;
+    border-bottom: 2px dashed transparent;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.preview-link:hover {
+    border-bottom-color: #00ff88;
+}
+
+/* Preview Card */
+.preview-card {
+    position: fixed;
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid #00ff88;
+    border-radius: 10px;
+    padding: 1rem;
+    width: 300px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    box-shadow: 0 0 20px rgba(0, 255, 136, 0.2);
+}
+
+.preview-card img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 0.5rem;
+}
+
+.preview-card h3 {
+    color: #00ff88;
+    margin: 0 0 0.5rem 0;
+}
+
+.preview-card p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+
+
+
+
+
+
+
+
+
+/* Enhanced Media Styles */
+.media-container {
+    perspective: 1000px;
+    margin: 2rem 0;
+}
+
+.media-wrapper {
+    position: relative;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+/* Image Styling */
+.image-frame {
+    border: 3px solid #00ff88;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
+    transition: transform 0.3s;
+}
+
+.image-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s;
+}
+
+.image-frame:hover img {
+    transform: scale(1.03);
+}
+
+.image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    padding: 2rem 1rem 1rem;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.image-frame:hover .image-overlay {
+    opacity: 1;
+}
+
+
+/* Image Size Control */
+.image-frame {
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+    border: 3px solid #00ff88;
+    border-radius: 15px;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
+    transition: transform 0.3s;
+}
+
+.image-frame img {
+    width: 100%;
+    height: auto;
+    max-height: 500px;
+    object-fit: contain;
+}
+
+/* GIF Size Control */
+.gif-container {
+    max-width: 800px;
+    width: 90%;
+    margin: 0 auto;
+    border: 3px solid #00ff88;
+    border-radius: 15px;
+    overflow: hidden;
+    animation: float 4s ease-in-out infinite;
+}
+
+.gif-container img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+/* Responsive Media Sizes */
+@media (max-width: 768px) {
+    .image-frame,
+    .gif-container {
+        max-width: 600px;
+    }
+    
+    .image-frame img {
+        max-height: 400px;
+    }
+    
+    .gif-container img {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .image-frame,
+    .gif-container {
+        width: 95%;
+        max-width: 100%;
+    }
+    
+    .image-frame img {
+        max-height: 300px;
+    }
+    
+    .gif-container img {
+        max-height: 250px;
+    }
+}
+
+/* Enhanced Video Controls */
+.custom-video-controls {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    padding: 1rem;
+    opacity: 1;
+    transition: opacity 0.3s;
+}
+
+.video-control-bar {
+    height: 4px;
+    background: rgba(255, 255, 255, 0.2);
+    margin-bottom: 0.5rem;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.video-progress {
+    height: 100%;
+    background: #00ff88;
+    width: 0;
+    border-radius: 2px;
+    transition: width 0.1s linear;
+}
+
+.download-button {
+    background: #00ff88;
+    color: #0f0c29;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+.download-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 136, 0.3);
+}
+
+
+/* Video Container Size Control */
+.video-container {
+    position: relative;
+    max-width: 800px; /* Maximum width */
+    width: 90%; /* Responsive width */
+    margin: 0 auto; /* Center the container */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
+    background: #000;
+}
+
+.video-container video {
+    width: 100%;
+    height: auto;
+    max-height: 450px; /* Maximum height */
+    object-fit: cover; /* Maintain aspect ratio */
+}
+
+/* Responsive Video Size */
+@media (max-width: 768px) {
+    .video-container {
+        max-width: 600px;
+    }
+    
+    .video-container video {
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-container {
+        width: 95%;
+    }
+    
+    .video-container video {
+        max-height: 250px;
+    }
+}
+
+/* GIF Styling */
+.gif-container {
+    position: relative;
+    border: 3px solid #00ff88;
+    border-radius: 15px;
+    overflow: hidden;
+    animation: float 4s ease-in-out infinite;
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.gif-container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid rgba(0, 255, 136, 0.3);
+    border-radius: 15px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
+/* PDF Styling */
+.pdf-viewer {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 255, 136, 0.2);
+    background: #fff;
+    position: relative;
+    min-height: 600px;
+}
+
+.pdf-viewer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, 
+        transparent 0%, 
+        rgba(0, 255, 136, 0.05) 50%, 
+        transparent 100%);
+    pointer-events: none;
+}
+
+.download-button {
+    position: absolute;
+    bottom: 1rem;
+    right: 1rem;
+    padding: 0.8rem 1.5rem;
+    background: #00ff88;
+    color: #0f0c29;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: transform 0.3s;
+    z-index: 10;
+}
+
+.download-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+}
+
+/* PDF Viewer Enhancements */
+.pdf-viewer {
+    position: relative;
+    width: 100%;
+    min-height: 600px;
+    background: #f8f9fa;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.pdf-viewer embed {
+    width: 100%;
+    height: 100%;
+    min-height: 600px;
+    border: none;
+}
+
+.pdf-info {
+    background: rgba(0, 0, 0, 0.05);
+    padding: 1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+
+.pdf-info p {
+    margin: 0.5rem 0;
+    color: #333;
+    font-size: 0.9rem;
+}
+
+/* Responsive PDF Viewer */
+@media (max-width: 768px) {
+    .pdf-viewer {
+        min-height: 400px;
+    }
+    
+    .pdf-viewer embed {
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 480px) {
+    .pdf-viewer {
+        min-height: 300px;
+    }
+    
+    .pdf-viewer embed {
+        min-height: 300px;
+    }
+}
+
+/* Media Content Enhancements */
+.media-content {
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 255, 136, 0.1);
+    transition: transform 0.3s;
+}
+
+.media-content:hover {
+    transform: translateY(-5px);
+}
+
+.media-content h3 {
+    color: #00ff88;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.media-content p {
+    line-height: 1.7;
+    opacity: 0.9;
+    color: #000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .media-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .pdf-viewer {
+        min-height: 400px;
+    }
+    
+    .download-button {
+        position: relative;
+        bottom: auto;
+        right: auto;
+        margin-top: 1rem;
+    }
+}
